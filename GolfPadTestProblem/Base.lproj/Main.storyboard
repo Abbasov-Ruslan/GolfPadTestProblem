@@ -123,9 +123,7 @@
                                     <constraint firstItem="dII-WX-xjN" firstAttribute="height" secondItem="9xX-Nf-VfY" secondAttribute="height" priority="250" id="R4w-9b-XG6"/>
                                     <constraint firstItem="dII-WX-xjN" firstAttribute="top" secondItem="WcM-ZZ-dNJ" secondAttribute="top" id="SEc-0I-HD1"/>
                                     <constraint firstItem="dII-WX-xjN" firstAttribute="bottom" secondItem="WcM-ZZ-dNJ" secondAttribute="bottom" id="Z4k-pG-HV5"/>
-                                    <constraint firstItem="dII-WX-xjN" firstAttribute="trailing" secondItem="9xX-Nf-VfY" secondAttribute="trailing" constant="8" id="ivK-Cx-wfP"/>
                                     <constraint firstItem="dII-WX-xjN" firstAttribute="trailing" secondItem="WcM-ZZ-dNJ" secondAttribute="trailing" id="peu-qV-4sa"/>
-                                    <constraint firstItem="dII-WX-xjN" firstAttribute="leading" secondItem="9xX-Nf-VfY" secondAttribute="leading" constant="8" id="pkQ-fe-ePw"/>
                                     <constraint firstItem="dII-WX-xjN" firstAttribute="width" secondItem="9xX-Nf-VfY" secondAttribute="width" id="wn4-Sb-efi"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="WcM-ZZ-dNJ"/>
