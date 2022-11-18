@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		536300002927B7860058BC8F /* CourseHandicapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFFF2927B7860058BC8F /* CourseHandicapViewModel.swift */; };
+		5363000A2927C47E0058BC8F /* CourseHandicapCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536300092927C47E0058BC8F /* CourseHandicapCalcViewController.swift */; };
 		5363FFEA2927B5C80058BC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFE92927B5C80058BC8F /* AppDelegate.swift */; };
 		5363FFEC2927B5C80058BC8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFEB2927B5C80058BC8F /* SceneDelegate.swift */; };
 		5363FFEE2927B5C80058BC8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFED2927B5C80058BC8F /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		536300092927C47E0058BC8F /* CourseHandicapCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHandicapCalcViewController.swift; sourceTree = "<group>"; };
 		5363FFE62927B5C80058BC8F /* GolfPadTestProblem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfPadTestProblem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5363FFE92927B5C80058BC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5363FFEB2927B5C80058BC8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		5363FFF22927B5D50058BC8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5363FFF52927B5D50058BC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5363FFF72927B5D50058BC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5363FFFF2927B7860058BC8F /* CourseHandicapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHandicapViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		536300032927C40C0058BC8F /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				5363FFFE2927B7710058BC8F /* ViewModel */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		536300062927C41D0058BC8F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				536300072927C44D0058BC8F /* CourseHandicap */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		536300072927C44D0058BC8F /* CourseHandicap */ = {
+			isa = PBXGroup;
+			children = (
+				536300092927C47E0058BC8F /* CourseHandicapCalcViewController.swift */,
+			);
+			path = CourseHandicap;
+			sourceTree = "<group>";
+		};
 		5363FFDD2927B5C70058BC8F = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +84,8 @@
 		5363FFE82927B5C80058BC8F /* GolfPadTestProblem */ = {
 			isa = PBXGroup;
 			children = (
+				536300062927C41D0058BC8F /* UI */,
+				536300032927C40C0058BC8F /* Code */,
 				5363FFE92927B5C80058BC8F /* AppDelegate.swift */,
 				5363FFEB2927B5C80058BC8F /* SceneDelegate.swift */,
 				5363FFED2927B5C80058BC8F /* ViewController.swift */,
@@ -65,6 +95,14 @@
 				5363FFF72927B5D50058BC8F /* Info.plist */,
 			);
 			path = GolfPadTestProblem;
+			sourceTree = "<group>";
+		};
+		5363FFFE2927B7710058BC8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5363FFFF2927B7860058BC8F /* CourseHandicapViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5363FFEE2927B5C80058BC8F /* ViewController.swift in Sources */,
+				536300002927B7860058BC8F /* CourseHandicapViewModel.swift in Sources */,
 				5363FFEA2927B5C80058BC8F /* AppDelegate.swift in Sources */,
 				5363FFEC2927B5C80058BC8F /* SceneDelegate.swift in Sources */,
+				5363000A2927C47E0058BC8F /* CourseHandicapCalcViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
