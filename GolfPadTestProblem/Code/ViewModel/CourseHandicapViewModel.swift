@@ -9,12 +9,11 @@ import Combine
 
 class CourseHandicapViewModel {
 
-//    var playerData = PlayerData()
     let handicapIndexSubject = CurrentValueSubject<Float?, Never>(nil)
     let slopeRatinIndexSubject = CurrentValueSubject<Float?, Never>(nil)
     let courseRatingSubject = CurrentValueSubject<Float?, Never>(nil)
     let parSubject = CurrentValueSubject<Float?, Never>(nil)
-    let courseHandicapSubject = PassthroughSubject<Float, Never>()
+    let courseHandicapSubject = PassthroughSubject<String, Never>()
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -34,13 +33,16 @@ class CourseHandicapViewModel {
                                             courseRate: course,
                                             par: par)
                 let courseHandicap = self.countCourseHandicap(playerData: playerData)
-                self.courseRatingSubject.send(courseHandicap)
-
+                if courseHandicap > 0 {
+                let courseHandicapRound = courseHandicap.rounded(toPlaces: 1)
+                let courseHandicapRoundString = String(courseHandicapRound)
+                self.courseHandicapSubject.send(courseHandicapRoundString)
+                }
             }.store(in: &cancellables)
     }
 
     func countCourseHandicap(playerData: PlayerData) -> Float {
-        if playerData.handicapIndex != 0 && playerData.slopeRating != 0 {
+        if  playerData.slopeRating != 0 {
             return countByFormula(handicapIndex: playerData.handicapIndex,
                                   slopeRating: playerData.slopeRating,
                                   courseRate: playerData.courseRate,

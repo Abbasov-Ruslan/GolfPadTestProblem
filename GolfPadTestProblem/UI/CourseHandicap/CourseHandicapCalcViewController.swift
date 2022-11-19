@@ -17,10 +17,14 @@ class CourseHandicapCalcViewController: UIViewController {
     @IBOutlet private weak var slopeRatingTextField: UITextField!
     @IBOutlet private weak var courseRatingTextField: UITextField!
     @IBOutlet private weak var parTextField: UITextField!
+    @IBOutlet private weak var courseNumberLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFieldsPublisher()
+        viewModel.courseHandicapSubject.sink { [weak self] courseHandicap in
+            self?.courseNumberLabel.text = courseHandicap
+        }.store(in: &cancellables)
 
     }
 

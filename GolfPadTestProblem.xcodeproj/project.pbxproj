@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		530A4C6F2928EF21000BE75E /* Combine + UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A4C6E2928EF21000BE75E /* Combine + UIControl.swift */; };
+		530A4C7429292CCF000BE75E /* Float + Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A4C7329292CCF000BE75E /* Float + Rounded.swift */; };
 		536300002927B7860058BC8F /* CourseHandicapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFFF2927B7860058BC8F /* CourseHandicapViewModel.swift */; };
 		5363000A2927C47E0058BC8F /* CourseHandicapCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536300092927C47E0058BC8F /* CourseHandicapCalcViewController.swift */; };
 		5363FFEA2927B5C80058BC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363FFE92927B5C80058BC8F /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		530A4C6E2928EF21000BE75E /* Combine + UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine + UIControl.swift"; sourceTree = "<group>"; };
+		530A4C7329292CCF000BE75E /* Float + Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float + Rounded.swift"; sourceTree = "<group>"; };
 		536300092927C47E0058BC8F /* CourseHandicapCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHandicapCalcViewController.swift; sourceTree = "<group>"; };
 		5363FFE62927B5C80058BC8F /* GolfPadTestProblem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfPadTestProblem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5363FFE92927B5C80058BC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				530A4C6E2928EF21000BE75E /* Combine + UIControl.swift */,
+				530A4C7329292CCF000BE75E /* Float + Rounded.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				5363FFEE2927B5C80058BC8F /* ViewController.swift in Sources */,
 				536300002927B7860058BC8F /* CourseHandicapViewModel.swift in Sources */,
 				5363FFEA2927B5C80058BC8F /* AppDelegate.swift in Sources */,
+				530A4C7429292CCF000BE75E /* Float + Rounded.swift in Sources */,
 				5363FFEC2927B5C80058BC8F /* SceneDelegate.swift in Sources */,
 				5363000A2927C47E0058BC8F /* CourseHandicapCalcViewController.swift in Sources */,
 				530A4C6F2928EF21000BE75E /* Combine + UIControl.swift in Sources */,
