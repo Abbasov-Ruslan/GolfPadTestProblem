@@ -7,38 +7,67 @@
 
 import Combine
 
-struct CourseHandicapViewModel {
+class CourseHandicapViewModel {
 
-    var playerData = PlayerData()
-    let handicapIndexSubject = CurrentValueSubject<Float, Never>(0)
-    let slopeRatinIndexSubject = CurrentValueSubject<Float, Never>(0)
-    let courseRatingSubject = CurrentValueSubject<Float, Never>(0)
-    let parSubject = CurrentValueSubject<Float, Never>(0)
+//    var playerData = PlayerData()
+    let handicapIndexSubject = CurrentValueSubject<Float?, Never>(nil)
+    let slopeRatinIndexSubject = CurrentValueSubject<Float?, Never>(nil)
+    let courseRatingSubject = CurrentValueSubject<Float?, Never>(nil)
+    let parSubject = CurrentValueSubject<Float?, Never>(nil)
+    let courseHandicapSubject = PassthroughSubject<Float, Never>()
 
     private var cancellables = Set<AnyCancellable>()
 
-    func countCourseHandiCap(playerData: PlayerData) -> Float {
-        return playerData.handicapIndex * (playerData.slopeRating / 113) + (playerData.courseRate - playerData.par)
+    init() {
+        Publishers.CombineLatest4(handicapIndexSubject, slopeRatinIndexSubject, courseRatingSubject, parSubject)
+            .sink { [weak self] (handicap, slope, course, par) in
+                guard let self = self,
+                      let handicap = handicap,
+                      let slope = slope,
+                      let course = course,
+                      let par = par
+                else {
+                    return
+                }
+                let playerData = PlayerData(handicapIndex: handicap,
+                                            slopeRating: slope,
+                                            courseRate: course,
+                                            par: par)
+                let courseHandicap = self.countCourseHandicap(playerData: playerData)
+                self.courseRatingSubject.send(courseHandicap)
+
+            }.store(in: &cancellables)
     }
 
-    public func handicapIndexChange(handicapIndex: String) {
-        let handicapIndexNumber = convertStringToFloat(string: handicapIndex)
-        handicapIndexSubject.send(handicapIndexNumber)
+    func countCourseHandicap(playerData: PlayerData) -> Float {
+        if playerData.handicapIndex != 0 && playerData.slopeRating != 0 {
+            return countByFormula(handicapIndex: playerData.handicapIndex,
+                                  slopeRating: playerData.slopeRating,
+                                  courseRate: playerData.courseRate,
+                                  par: playerData.par)
+        } else {
+            return 0
+        }
     }
 
-    public func slopeRatingChange(slopeRating: String) {
-        let slopeRatingNumber = convertStringToFloat(string: slopeRating)
-        slopeRatinIndexSubject.send(slopeRatingNumber)
+    func countByFormula(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> Float {
+        return handicapIndex * (slopeRating / 113) + (courseRate - par)
     }
 
-    public func courseRatingChange(courseRating: String) {
-        let courseRatingNumber = convertStringToFloat(string: courseRating)
-        courseRatingSubject.send(courseRatingNumber)
-    }
-
-    public func parChange(par: String) {
-        let parNumber = convertStringToFloat(string: par)
-        courseRatingSubject.send(parNumber)
+    public func playerDataChange(numberString: String?, dataType: PlayerDataType) {
+        guard let floatNumber = Float(numberString!) else {
+            return
+        }
+        switch dataType {
+        case .handicapIndex:
+            handicapIndexSubject.send(floatNumber)
+        case .slopeRating:
+            slopeRatinIndexSubject.send(floatNumber)
+        case .courseRate:
+            courseRatingSubject.send(floatNumber)
+        case .par:
+            parSubject.send(floatNumber)
+        }
     }
 
     private func convertStringToFloat(string: String) -> Float {
@@ -55,4 +84,11 @@ struct PlayerData {
     var slopeRating: Float = 0
     var courseRate: Float = 0
     var par: Float = 0
+}
+
+enum PlayerDataType {
+    case handicapIndex
+    case slopeRating
+    case courseRate
+    case par
 }
