@@ -9,10 +9,10 @@ import Combine
 
 class CourseHandicapViewModel {
 
-    private let handicapIndexSubject = CurrentValueSubject<Float?, Never>(nil)
-    private let slopeRatinIndexSubject = CurrentValueSubject<Float?, Never>(nil)
-    private let courseRatingSubject = CurrentValueSubject<Float?, Never>(nil)
-    private let parSubject = CurrentValueSubject<Float?, Never>(nil)
+    private let handicapIndexSubject = PassthroughSubject<Float, Never>()
+    private let slopeRatinIndexSubject = PassthroughSubject<Float, Never>()
+    private let courseRatingSubject = PassthroughSubject<Float, Never>()
+    private let parSubject = PassthroughSubject<Float, Never>()
     private var cancellables = Set<AnyCancellable>()
 
     public let courseHandicapSubject = PassthroughSubject<String, Never>()
@@ -46,15 +46,7 @@ class CourseHandicapViewModel {
         }
     }
 
-    private func sendCourseHandicap(handicapIndex: Float?, slopeRating: Float?, courseRate: Float?, par: Float?) {
-        guard
-            let handicapIndex = handicapIndex,
-            let slopeRating = slopeRating,
-            let courseRate = courseRate,
-            let par = par
-        else {
-            return
-        }
+    private func sendCourseHandicap(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) {
 
         guard
             let courseHandicap = self.getCourseHandicap(handicapIndex: handicapIndex,
