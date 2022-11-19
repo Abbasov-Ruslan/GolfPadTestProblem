@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class CourseHandicapCalcViewController: UIViewController {
+class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
 
     private var cancellables = Set<AnyCancellable>()
     private var viewModel = CourseHandicapViewModel()
@@ -25,6 +25,10 @@ class CourseHandicapCalcViewController: UIViewController {
         viewModel.courseHandicapSubject.sink { [weak self] courseHandicap in
             self?.courseNumberLabel.text = courseHandicap
         }.store(in: &cancellables)
+
+        setupTextFieldsTag()
+
+        self.hideKeyboardWhenTappedAround()
 
     }
 
@@ -43,6 +47,31 @@ class CourseHandicapCalcViewController: UIViewController {
                 self?.viewModel.playerDataChange(numberString: textField.text, dataType: dataType)
             }.store(in: &cancellables)
 
+    }
+
+    private func setupTextFieldsTag() {
+
+        handicapIndexTextField.delegate = self
+        handicapIndexTextField.tag = 0
+
+        slopeRatingTextField.delegate = self
+        slopeRatingTextField.tag = 1
+
+        courseRatingTextField.delegate = self
+        courseRatingTextField.tag = 2
+
+        parTextField.delegate = self
+        parTextField.tag = 3
+
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+          nextField.becomeFirstResponder()
+       } else {
+          textField.resignFirstResponder()
+       }
+       return false
     }
 
 }
