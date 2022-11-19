@@ -55,9 +55,27 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		530A4C7A292945A9000BE75E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5363FFE92927B5C80058BC8F /* AppDelegate.swift */,
+				5363FFEB2927B5C80058BC8F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		530A4C7D292945E4000BE75E /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				5363FFF22927B5D50058BC8F /* Assets.xcassets */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
 		536300032927C40C0058BC8F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				530A4C7A292945A9000BE75E /* App */,
 				530A4C6D2928EF08000BE75E /* Extension */,
 				5363FFFE2927B7710058BC8F /* ViewModel */,
 			);
@@ -67,6 +85,8 @@
 		536300062927C41D0058BC8F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5363FFEF2927B5C80058BC8F /* Main.storyboard */,
+				5363FFF42927B5D50058BC8F /* LaunchScreen.storyboard */,
 				536300072927C44D0058BC8F /* CourseHandicap */,
 			);
 			path = UI;
@@ -99,14 +119,10 @@
 		5363FFE82927B5C80058BC8F /* GolfPadTestProblem */ = {
 			isa = PBXGroup;
 			children = (
+				5363FFF72927B5D50058BC8F /* Info.plist */,
+				530A4C7D292945E4000BE75E /* Recources */,
 				536300062927C41D0058BC8F /* UI */,
 				536300032927C40C0058BC8F /* Code */,
-				5363FFE92927B5C80058BC8F /* AppDelegate.swift */,
-				5363FFEB2927B5C80058BC8F /* SceneDelegate.swift */,
-				5363FFEF2927B5C80058BC8F /* Main.storyboard */,
-				5363FFF22927B5D50058BC8F /* Assets.xcassets */,
-				5363FFF42927B5D50058BC8F /* LaunchScreen.storyboard */,
-				5363FFF72927B5D50058BC8F /* Info.plist */,
 			);
 			path = GolfPadTestProblem;
 			sourceTree = "<group>";

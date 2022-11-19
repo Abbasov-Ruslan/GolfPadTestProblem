@@ -18,18 +18,25 @@ class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var courseRatingTextField: UITextField!
     @IBOutlet private weak var parTextField: UITextField!
     @IBOutlet private weak var courseNumberLabel: UILabel!
+    @IBOutlet private weak var resultBackgroundView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeToCourseHandicapSubject()
+        setupTextFieldsTag()
+        self.hideKeyboardWhenTappedAround()
+        setupCornerRadius(view: resultBackgroundView)
+    }
+
+    private func subscribeToCourseHandicapSubject() {
         setupTextFieldsPublisher()
         viewModel.courseHandicapSubject.sink { [weak self] courseHandicap in
             self?.courseNumberLabel.text = courseHandicap
         }.store(in: &cancellables)
+    }
 
-        setupTextFieldsTag()
-
-        self.hideKeyboardWhenTappedAround()
-
+    private func setupCornerRadius(view: UIView) {
+        view.layer.cornerRadius = view.frame.height / 4
     }
 
     private func setupTextFieldsPublisher() {
@@ -50,7 +57,6 @@ class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func setupTextFieldsTag() {
-
         handicapIndexTextField.delegate = self
         handicapIndexTextField.tag = 0
 
@@ -62,7 +68,6 @@ class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
 
         parTextField.delegate = self
         parTextField.tag = 3
-
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

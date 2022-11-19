@@ -1,6 +1,6 @@
 excluded:
-  - GolfPadTestProblem/AppDelegate.swift
-  - GolfPadTestProblem/SceneDelegate.swift
+  - GolfPadTestProblem/Code/App/AppDelegate.swift
+  - GolfPadTestProblem/Code/App/SceneDelegate.swift
   - GolfPadTestProblem/Code/Extension/Combine + UIControl.swift
 
 disabled_rules:

@@ -36,16 +36,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dII-WX-xjN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1051"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1001"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O12-df-dkV">
-                                                <rect key="frame" x="8" y="100" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="50" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0r-E1-59v">
-                                                <rect key="frame" x="8" y="132" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="82" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="FzG-b2-Tg9"/>
                                                 </constraints>
@@ -53,25 +53,25 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slope Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-SM-yPg">
-                                                <rect key="frame" x="8" y="202" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="152" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-zx-5dL">
-                                                <rect key="frame" x="8" y="304" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="254" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Par" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CcE-bf-scv">
-                                                <rect key="frame" x="8" y="407" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="357" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-58-RJJ">
-                                                <rect key="frame" x="8" y="234" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="184" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wwD-FW-9de"/>
                                                 </constraints>
@@ -79,7 +79,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owW-t0-iva">
-                                                <rect key="frame" x="8" y="337" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="287" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wJH-tj-mRB"/>
                                                 </constraints>
@@ -87,7 +87,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-Of-VOg">
-                                                <rect key="frame" x="8" y="439" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="389" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="cvH-kH-m5X"/>
                                                 </constraints>
@@ -95,7 +95,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-Hj-P5Q">
-                                                <rect key="frame" x="8" y="525" width="398" height="76"/>
+                                                <rect key="frame" x="8" y="475" width="398" height="76"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Course Handicap " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="aQY-Nh-mb0">
                                                         <rect key="frame" x="29" y="28" width="227" height="28"/>
@@ -140,7 +140,7 @@
                                             <constraint firstItem="UFW-zx-5dL" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="YQJ-V9-I4Q"/>
                                             <constraint firstItem="owW-t0-iva" firstAttribute="top" secondItem="UFW-zx-5dL" secondAttribute="bottom" constant="9" id="YQY-Sd-gwe"/>
                                             <constraint firstItem="j2h-Hj-P5Q" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="bZQ-Ct-yXL"/>
-                                            <constraint firstItem="O12-df-dkV" firstAttribute="top" secondItem="dII-WX-xjN" secondAttribute="top" constant="100" id="bxM-cH-a4e"/>
+                                            <constraint firstItem="O12-df-dkV" firstAttribute="top" secondItem="dII-WX-xjN" secondAttribute="top" constant="50" id="bxM-cH-a4e"/>
                                             <constraint firstItem="j2h-Hj-P5Q" firstAttribute="top" secondItem="7F6-Of-VOg" secondAttribute="bottom" constant="46" id="cqr-ll-gkE"/>
                                             <constraint firstItem="E0r-E1-59v" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="dSD-cu-8LJ"/>
                                             <constraint firstAttribute="trailing" secondItem="CcE-bf-scv" secondAttribute="trailing" constant="8" id="eiz-xx-6xo"/>
@@ -181,6 +181,7 @@
                         <outlet property="courseRatingTextField" destination="owW-t0-iva" id="bj9-hd-kP0"/>
                         <outlet property="handicapIndexTextField" destination="E0r-E1-59v" id="Q1n-q9-Qvm"/>
                         <outlet property="parTextField" destination="7F6-Of-VOg" id="8Fe-V1-e9h"/>
+                        <outlet property="resultBackgroundView" destination="j2h-Hj-P5Q" id="KJa-hj-hK2"/>
                         <outlet property="slopeRatingTextField" destination="TD0-58-RJJ" id="lv5-v6-8i5"/>
                     </connections>
                 </viewController>
