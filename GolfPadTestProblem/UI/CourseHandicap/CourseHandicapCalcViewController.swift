@@ -25,18 +25,18 @@ class CourseHandicapCalcViewController: UIViewController {
     }
 
     private func setupTextFieldsPublisher() {
-        addTextFieldPublisher(textField: handicapIndexTextField)
-        addTextFieldPublisher(textField: slopeRatingTextField)
-        addTextFieldPublisher(textField: courseRatingTextField)
-        addTextFieldPublisher(textField: parTextField)
+        addTextFieldPublisher(textField: handicapIndexTextField, dataType: .handicapIndex)
+        addTextFieldPublisher(textField: slopeRatingTextField, dataType: .slopeRating)
+        addTextFieldPublisher(textField: courseRatingTextField, dataType: .courseRate)
+        addTextFieldPublisher(textField: parTextField, dataType: .par)
     }
 
-    private func addTextFieldPublisher(textField: UITextField) {
+    private func addTextFieldPublisher(textField: UITextField, dataType: PlayerDataType) {
         textField
             .publisher(for: .editingChanged)
             .debounce(for: .milliseconds(1000), scheduler: DispatchQueue.main)
             .sink { [weak self] in
-                self?.viewModel.handicapIndexChange(handicapIndex: textField.text ?? "")
+                self?.viewModel.playerDataChange(numberString: textField.text, dataType: dataType)
             }.store(in: &cancellables)
 
     }
