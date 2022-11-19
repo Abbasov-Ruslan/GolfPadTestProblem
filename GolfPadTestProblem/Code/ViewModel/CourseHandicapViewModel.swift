@@ -9,51 +9,25 @@ import Combine
 
 class CourseHandicapViewModel {
 
-    let handicapIndexSubject = CurrentValueSubject<Float?, Never>(nil)
-    let slopeRatinIndexSubject = CurrentValueSubject<Float?, Never>(nil)
-    let courseRatingSubject = CurrentValueSubject<Float?, Never>(nil)
-    let parSubject = CurrentValueSubject<Float?, Never>(nil)
-    let courseHandicapSubject = PassthroughSubject<String, Never>()
-
+    private let handicapIndexSubject = CurrentValueSubject<Float?, Never>(nil)
+    private let slopeRatinIndexSubject = CurrentValueSubject<Float?, Never>(nil)
+    private let courseRatingSubject = CurrentValueSubject<Float?, Never>(nil)
+    private let parSubject = CurrentValueSubject<Float?, Never>(nil)
     private var cancellables = Set<AnyCancellable>()
 
+    public let courseHandicapSubject = PassthroughSubject<String, Never>()
+
     init() {
-        Publishers.CombineLatest4(handicapIndexSubject, slopeRatinIndexSubject, courseRatingSubject, parSubject)
+        Publishers.CombineLatest4(handicapIndexSubject,
+                                  slopeRatinIndexSubject,
+                                  courseRatingSubject,
+                                  parSubject)
             .sink { [weak self] (handicap, slope, course, par) in
-                guard let self = self,
-                      let handicap = handicap,
-                      let slope = slope,
-                      let course = course,
-                      let par = par
-                else {
-                    return
-                }
-                let playerData = PlayerData(handicapIndex: handicap,
-                                            slopeRating: slope,
-                                            courseRate: course,
-                                            par: par)
-                let courseHandicap = self.countCourseHandicap(playerData: playerData)
-                if courseHandicap > 0 {
-                let courseHandicapRound = courseHandicap.rounded(toPlaces: 1)
-                let courseHandicapRoundString = String(courseHandicapRound)
-                self.courseHandicapSubject.send(courseHandicapRoundString)
-                }
+                self?.sendCourseHandicap(handicapIndex: handicap,
+                                         slopeRating: slope,
+                                         courseRate: course,
+                                         par: par)
             }.store(in: &cancellables)
-    }
-
-    func countCourseHandicap(playerData: PlayerData) -> Float {
-        if  playerData.slopeRating != 0 {
-            return countByFormula(handicapIndex: playerData.handicapIndex,
-                                  slopeRating: playerData.slopeRating,
-                                  courseRate: playerData.courseRate,
-                                  par: playerData.par)
-        } else {
-            return 0
-        }
-    }
-
-    func countByFormula(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> Float {
-        return handicapIndex * (slopeRating / 113) + (courseRate - par)
     }
 
     public func playerDataChange(numberString: String?, dataType: PlayerDataType) {
@@ -72,6 +46,50 @@ class CourseHandicapViewModel {
         }
     }
 
+    private func sendCourseHandicap(handicapIndex: Float?, slopeRating: Float?, courseRate: Float?, par: Float?) {
+        guard
+            let handicapIndex = handicapIndex,
+            let slopeRating = slopeRating,
+            let courseRate = courseRate,
+            let par = par
+        else {
+            return
+        }
+
+        guard
+            let courseHandicap = self.getCourseHandicap(handicapIndex: handicapIndex,
+                                                          slopeRating: slopeRating,
+                                                          courseRate: courseRate,
+                                                          par: par)
+        else {
+            return
+        }
+
+        self.courseHandicapSubject.send(courseHandicap)
+    }
+
+    private func getCourseHandicap(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> String? {
+
+        let courseHandicap = self.countCourseHandicap(handicapIndex: handicapIndex,
+                                                      slopeRating: slopeRating,
+                                                      courseRate: courseRate,
+                                                      par: par)
+        if courseHandicap > 0 {
+            let courseHandicapRound = courseHandicap.rounded(toPlaces: 1)
+            let courseHandicapRoundString = String(courseHandicapRound)
+            return courseHandicapRoundString
+        } else {
+            return nil
+        }
+    }
+
+}
+
+extension CourseHandicapViewModel {
+    private func countByFormula(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> Float {
+        return handicapIndex * (slopeRating / 113) + (courseRate - par)
+    }
+
     private func convertStringToFloat(string: String) -> Float {
         guard let number = Float(string) else {
             return 0
@@ -79,13 +97,16 @@ class CourseHandicapViewModel {
         return number
     }
 
-}
-
-struct PlayerData {
-    var handicapIndex: Float = 0
-    var slopeRating: Float = 0
-    var courseRate: Float = 0
-    var par: Float = 0
+    private func countCourseHandicap(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> Float {
+        if  slopeRating != 0 {
+            return countByFormula(handicapIndex: handicapIndex,
+                                  slopeRating: slopeRating,
+                                  courseRate: courseRate,
+                                  par: par)
+        } else {
+            return 0
+        }
+    }
 }
 
 enum PlayerDataType {
