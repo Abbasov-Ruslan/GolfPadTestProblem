@@ -49,7 +49,7 @@ extension UIControl {
             self.event = event
         }
 
-        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Void == S.Input {
+        func receive<S>(subscriber: S) where S: Subscriber, Never == S.Failure, Void == S.Input {
 
             let subscription = InteractionSubscription(
                 subscriber: subscriber,

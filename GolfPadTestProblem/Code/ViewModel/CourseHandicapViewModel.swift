@@ -17,7 +17,7 @@ struct CourseHandicapViewModel {
 
     private var cancellables = Set<AnyCancellable>()
 
-    func countCourseHandiCap(playerData: PlayerData) -> Float{
+    func countCourseHandiCap(playerData: PlayerData) -> Float {
         return playerData.handicapIndex * (playerData.slopeRating / 113) + (playerData.courseRate - playerData.par)
     }
 

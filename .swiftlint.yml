@@ -1,0 +1,7 @@
+excluded:
+  - GolfPadTestProblem/AppDelegate.swift
+  - GolfPadTestProblem/SceneDelegate.swift
+  - GolfPadTestProblem/Code/Extension/Combine + UIControl.swift
+
+disabled_rules:
+   - identifier_name
