@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KDY-Ar-d9H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,60 +8,70 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Fi8-Ir-cQf">
+            <objects>
+                <navigationController id="KDY-Ar-d9H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sol-iS-FzJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0Sy-K3-IvS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lD8-X9-6Zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="65"/>
+        </scene>
+        <!--Course Handicap-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GolfPadTestProblem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CourseHandicapCalcViewController" customModule="GolfPadTestProblem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ut4-bX-agk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dII-WX-xjN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="879"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Handicap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7w-wF-jCW">
-                                                <rect key="frame" x="8" y="8" width="391" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O12-df-dkV">
-                                                <rect key="frame" x="8" y="141" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="100" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0r-E1-59v">
-                                                <rect key="frame" x="8" y="173" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="132" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="FzG-b2-Tg9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slope Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-SM-yPg">
-                                                <rect key="frame" x="8" y="243" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="202" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-zx-5dL">
-                                                <rect key="frame" x="8" y="345" width="398" height="24"/>
+                                                <rect key="frame" x="8" y="304" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcE-bf-scv">
-                                                <rect key="frame" x="8" y="448" width="398" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Par" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcE-bf-scv">
+                                                <rect key="frame" x="8" y="407" width="398" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-58-RJJ">
-                                                <rect key="frame" x="8" y="275" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="234" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wwD-FW-9de"/>
                                                 </constraints>
@@ -69,7 +79,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owW-t0-iva">
-                                                <rect key="frame" x="8" y="378" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="337" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wJH-tj-mRB"/>
                                                 </constraints>
@@ -77,7 +87,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-Of-VOg">
-                                                <rect key="frame" x="8" y="480" width="398" height="40"/>
+                                                <rect key="frame" x="8" y="439" width="398" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="cvH-kH-m5X"/>
                                                 </constraints>
@@ -99,14 +109,11 @@
                                             <constraint firstAttribute="trailing" secondItem="owW-t0-iva" secondAttribute="trailing" constant="8" id="K8w-SB-gF9"/>
                                             <constraint firstItem="CcE-bf-scv" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="M2q-0P-T1x"/>
                                             <constraint firstAttribute="trailing" secondItem="UFW-zx-5dL" secondAttribute="trailing" constant="8" id="Ouv-Vb-zcu"/>
-                                            <constraint firstItem="O12-df-dkV" firstAttribute="top" secondItem="G7w-wF-jCW" secondAttribute="bottom" constant="105" id="RWj-If-sBo"/>
-                                            <constraint firstItem="G7w-wF-jCW" firstAttribute="top" secondItem="dII-WX-xjN" secondAttribute="top" constant="8" id="XZM-uE-e6k"/>
                                             <constraint firstItem="UFW-zx-5dL" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="YQJ-V9-I4Q"/>
                                             <constraint firstItem="owW-t0-iva" firstAttribute="top" secondItem="UFW-zx-5dL" secondAttribute="bottom" constant="9" id="YQY-Sd-gwe"/>
-                                            <constraint firstAttribute="trailing" secondItem="G7w-wF-jCW" secondAttribute="trailing" constant="15" id="YR6-QO-ZIE"/>
-                                            <constraint firstItem="G7w-wF-jCW" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="aLU-Nh-jGi"/>
+                                            <constraint firstItem="O12-df-dkV" firstAttribute="top" secondItem="dII-WX-xjN" secondAttribute="top" constant="100" id="bxM-cH-a4e"/>
                                             <constraint firstItem="E0r-E1-59v" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="dSD-cu-8LJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="7F6-Of-VOg" secondAttribute="bottom" constant="298" id="dX2-8G-RC6"/>
+                                            <constraint firstAttribute="bottom" secondItem="7F6-Of-VOg" secondAttribute="bottom" constant="400" id="dX2-8G-RC6"/>
                                             <constraint firstAttribute="trailing" secondItem="CcE-bf-scv" secondAttribute="trailing" constant="8" id="eiz-xx-6xo"/>
                                             <constraint firstItem="owW-t0-iva" firstAttribute="leading" secondItem="dII-WX-xjN" secondAttribute="leading" constant="8" id="ep8-mr-uOu"/>
                                             <constraint firstAttribute="trailing" secondItem="RrP-SM-yPg" secondAttribute="trailing" constant="8" id="gHG-dC-BnI"/>
@@ -139,6 +146,13 @@
                             <constraint firstItem="ut4-bX-agk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tVD-LI-Os0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Course Handicap" id="c86-LL-R0h"/>
+                    <connections>
+                        <outlet property="courseRatingTextField" destination="owW-t0-iva" id="bj9-hd-kP0"/>
+                        <outlet property="handicapIndexTextField" destination="E0r-E1-59v" id="Q1n-q9-Qvm"/>
+                        <outlet property="parTextField" destination="7F6-Of-VOg" id="8Fe-V1-e9h"/>
+                        <outlet property="slopeRatingTextField" destination="TD0-58-RJJ" id="lv5-v6-8i5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
