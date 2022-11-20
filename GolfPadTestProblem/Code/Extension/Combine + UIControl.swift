@@ -16,9 +16,7 @@ extension UIControl {
         private let control: UIControl
         private let event: UIControl.Event
 
-        init(subscriber: S,
-             control: UIControl,
-             event: UIControl.Event) {
+        init(subscriber: S, control: UIControl, event: UIControl.Event) {
 
             self.subscriber = subscriber
             self.control = control
@@ -50,7 +48,6 @@ extension UIControl {
         }
 
         func receive<S>(subscriber: S) where S: Subscriber, Never == S.Failure, Void == S.Input {
-
             let subscription = InteractionSubscription(
                 subscriber: subscriber,
                 control: control,
@@ -62,7 +59,6 @@ extension UIControl {
     }
 
     func publisher(for event: UIControl.Event) -> UIControl.InteractionPublisher {
-
         return InteractionPublisher(control: self, event: event)
     }
 
