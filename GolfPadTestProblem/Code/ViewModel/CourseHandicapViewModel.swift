@@ -47,7 +47,6 @@ class CourseHandicapViewModel {
     }
 
     private func sendCourseHandicap(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) {
-
         guard
             let courseHandicap = self.getCourseHandicap(handicapIndex: handicapIndex,
                                                           slopeRating: slopeRating,
@@ -61,7 +60,6 @@ class CourseHandicapViewModel {
     }
 
     private func getCourseHandicap(handicapIndex: Float, slopeRating: Float, courseRate: Float, par: Float) -> String? {
-
         let courseHandicap = self.countCourseHandicap(handicapIndex: handicapIndex,
                                                       slopeRating: slopeRating,
                                                       courseRate: courseRate,
