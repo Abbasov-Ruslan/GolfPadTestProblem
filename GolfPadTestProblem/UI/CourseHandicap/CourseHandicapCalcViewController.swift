@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
+class CourseHandicapCalcViewController: UIViewController {
 
     private var cancellables = Set<AnyCancellable>()
     private var viewModel = CourseHandicapViewModel()
@@ -23,7 +23,7 @@ class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeToCourseHandicapSubject()
-        setupTextFieldsTag()
+        setupTextFieldsDelegate()
         self.hideKeyboardWhenTappedAround()
         setupCornerRadius(view: resultBackgroundView)
     }
@@ -56,27 +56,29 @@ class CourseHandicapCalcViewController: UIViewController, UITextFieldDelegate {
 
     }
 
-    private func setupTextFieldsTag() {
+    private func setupTextFieldsDelegate() {
         handicapIndexTextField.delegate = self
-        handicapIndexTextField.tag = 0
-
         slopeRatingTextField.delegate = self
-        slopeRatingTextField.tag = 1
-
         courseRatingTextField.delegate = self
-        courseRatingTextField.tag = 2
-
         parTextField.delegate = self
-        parTextField.tag = 3
     }
 
+}
+
+extension CourseHandicapCalcViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
+        switch textField {
+        case handicapIndexTextField:
+            slopeRatingTextField.becomeFirstResponder()
+        case slopeRatingTextField:
+            courseRatingTextField.becomeFirstResponder()
+        case courseRatingTextField:
+            parTextField.becomeFirstResponder()
+        case parTextField:
+            textField.resignFirstResponder()
+        default:
             textField.resignFirstResponder()
         }
         return false
     }
-
 }
